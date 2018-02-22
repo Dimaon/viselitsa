@@ -6,6 +6,8 @@
 
     ruby viselitsa.rb
 
+Добавлять новые слова для отгадывания необходимо в файл ./data/words.txt
+
 Предварительно необходимо настроить интерпретатор языка Ruby. [Инструкции по настройке](http://goodprogrammer.ru/rails-winter-18/lessons/02-setup-ruby "Хороший программист")
 
 [Ссылка на установку Ruby](https://www.ruby-lang.org/ru/documentation/installation/)
