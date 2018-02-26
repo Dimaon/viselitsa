@@ -22,3 +22,6 @@
 Предварительно необходимо настроить интерпретатор языка Ruby.
 
 [Ссылка на установку Ruby](https://www.ruby-lang.org/ru/documentation/installation/)
+
+## Автор приложения
+[Куликов Дмитрий](https://github.com/Dimaon)
