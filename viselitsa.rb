@@ -15,10 +15,8 @@ require_relative "word_reader"
 # For Ruby < 2.4
 require "unicode"
 
-puts "Игра виселица. Версия 3. (c) goodprogrammer.ru\n\n"
-sleep 1
-
-printer = ResultPrinter.new
+VERSION = "Игра виселица. Версия 3. (c) goodprogrammer.ru\n\n"
+sleep 0.4
 
 # Создаем экземпляр класса Word который мы будет использовать для
 # вывода информации на экран.
@@ -32,7 +30,11 @@ words_file_name = File.dirname(__FILE__) + "/data/words.txt"
 # вернет метод read_from_file экземпляра класса WordReader.
 game = Game.new(word_reader.read_from_file(words_file_name))
 
-while game.status == 0
+game.version = VERSION
+
+printer = ResultPrinter.new(game)
+
+while game.in_progress?
   printer.print_status(game)
   game.ask_next_letter
 end

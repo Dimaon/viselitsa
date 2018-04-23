@@ -6,7 +6,7 @@
 class ResultPrinter
   # В конструкторе мы прочитаем все изображения виселиц и запишем каждое из низ
   # в отдельный элемент массива.
-  def initialize
+  def initialize(game)
     # Создадим переменную экземпляра @status_image — массив, хранящий
     # изображения виселиц.
     @status_image = []
@@ -19,7 +19,7 @@ class ResultPrinter
     counter = 0
 
     # В цикле прочитаем 7 файлов из папки image и запишем из содержимое в массив
-    while counter <= 7
+    while counter <= game.max_errors do
       # Соберем путь к файлу с изображением виселицы. Каждыый из них лежит в
       # папке /image/ и называется 0.txt, 1.txt, 2.txt и т. д.
       file_name = current_path + "/image/#{counter}.txt"
@@ -62,17 +62,17 @@ class ResultPrinter
     # поменялась только его реализация.
     print_viselitsa(game.errors)
 
-    if game.status == -1
+    if game.lost?
       puts
       puts "Вы проиграли :("
       puts "Загаданное слово было: " + game.letters.join("")
       puts
-    elsif game.status == 1
+    elsif game.won?
       puts
       puts "Поздравляем, вы выиграли!"
       puts
     else
-      puts "У вас осталось ошибок: " + (7 - game.errors).to_s
+      puts "У вас осталось ошибок: #{game.errors_left}"
     end
   end
 
