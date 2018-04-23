@@ -12,8 +12,6 @@ end
 require_relative "game"
 require_relative "result_printer"
 require_relative "word_reader"
-# For Ruby < 2.4
-require "unicode"
 
 VERSION = "Игра виселица. Версия 3. (c) goodprogrammer.ru\n\n"
 sleep 0.4
