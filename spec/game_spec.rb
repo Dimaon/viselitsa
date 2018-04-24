@@ -1,5 +1,5 @@
 require "rspec"
-require_relative "../game.rb"
+require_relative "../lib/game.rb"
 
 describe Game do
   it "word guessed" do
